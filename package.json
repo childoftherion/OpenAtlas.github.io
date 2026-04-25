@@ -1,0 +1,13 @@
+{
+  "name": "open-atlas-site",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && test -f public/.nojekyll && cp public/.nojekyll dist/.nojekyll || true",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.7.12"
+  }
+}

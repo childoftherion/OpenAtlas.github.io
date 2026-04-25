@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Illustration of a weatherproof storage box">
+  <defs>
+    <linearGradient id="b-bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1c2430"/>
+      <stop offset="1" stop-color="#0b0d0e"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#b-bg)"/>
+  <ellipse cx="300" cy="400" rx="220" ry="12" fill="#000" opacity="0.4"/>
+  <g transform="translate(300,230)">
+    <polygon points="-180,-80 180,-80 230,-50 230,100 -230,100 -230,-50" fill="#2a2f33" stroke="#0b1010" stroke-width="2"/>
+    <polygon points="-180,-80 180,-80 230,-50 -230,-50" fill="#3a4044"/>
+    <polygon points="-230,-50 -230,100 -180,130 -180,-20" fill="#1a1d20"/>
+    <polygon points="230,-50 230,100 180,130 180,-20" fill="#22272a"/>
+    <polygon points="-180,-20 180,-20 180,130 -180,130" fill="#2a2f33" stroke="#0b1010" stroke-width="1"/>
+    <g fill="#1a1d20" stroke="#0b1010" stroke-width="1.5">
+      <rect x="-160" y="-10" width="40" height="22" rx="4"/>
+      <rect x="120" y="-10" width="40" height="22" rx="4"/>
+    </g>
+    <g fill="#e89558">
+      <circle cx="-140" cy="1" r="3"/>
+      <circle cx="140" cy="1" r="3"/>
+    </g>
+    <rect x="-100" y="30" width="200" height="50" rx="4" fill="#1a1d20" stroke="#0b1010" stroke-width="1.5"/>
+    <text x="0" y="62" text-anchor="middle" fill="#e89558" font-family="monospace" font-size="20" letter-spacing="4">ARB 40L</text>
+    <g stroke="#11161a" stroke-width="1" opacity="0.7">
+      <line x1="-180" y1="10" x2="180" y2="10"/>
+      <line x1="-180" y1="90" x2="180" y2="90"/>
+      <line x1="-180" y1="110" x2="180" y2="110"/>
+    </g>
+  </g>
+</svg>

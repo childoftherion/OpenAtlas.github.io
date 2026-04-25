@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Illustration of a rugged GPS smartwatch">
+  <defs>
+    <linearGradient id="w-bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1c2430"/>
+      <stop offset="1" stop-color="#0b0d0e"/>
+    </linearGradient>
+    <radialGradient id="w-face" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#11181e"/>
+      <stop offset="1" stop-color="#060809"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#w-bg)"/>
+  <ellipse cx="300" cy="405" rx="120" ry="8" fill="#000" opacity="0.4"/>
+  <g transform="translate(300,225)">
+    <rect x="-30" y="-165" width="60" height="60" rx="8" fill="#1a1d20"/>
+    <rect x="-30" y="105" width="60" height="60" rx="8" fill="#1a1d20"/>
+    <rect x="-28" y="-160" width="56" height="50" fill="#2a2f33"/>
+    <rect x="-28" y="110" width="56" height="50" fill="#2a2f33"/>
+    <circle cx="0" cy="0" r="120" fill="#1a1d20" stroke="#2a2f33" stroke-width="4"/>
+    <circle cx="0" cy="0" r="102" fill="url(#w-face)"/>
+    <circle cx="0" cy="0" r="92" fill="none" stroke="#2a3740" stroke-width="2"/>
+    <g font-family="monospace" fill="#9aa5b1" font-size="12" text-anchor="middle">
+      <text x="0" y="-60">TRACK</text>
+      <text x="0" y="-30">08:42</text>
+      <text x="0" y="0" fill="#e89558" font-size="24" font-weight="700">12.4 mi</text>
+      <text x="0" y="28">1,240 ft ‘</text>
+      <text x="0" y="55">N 44°03'</text>
+    </g>
+    <circle cx="116" cy="-45" r="10" fill="#1a1d20" stroke="#2a2f33" stroke-width="2"/>
+    <circle cx="116" cy="0" r="10" fill="#e89558" stroke="#b14d1a" stroke-width="2"/>
+    <circle cx="116" cy="45" r="10" fill="#1a1d20" stroke="#2a2f33" stroke-width="2"/>
+    <circle cx="-116" cy="-20" r="8" fill="#1a1d20" stroke="#2a2f33" stroke-width="2"/>
+    <circle cx="-116" cy="20" r="8" fill="#1a1d20" stroke="#2a2f33" stroke-width="2"/>
+  </g>
+</svg>

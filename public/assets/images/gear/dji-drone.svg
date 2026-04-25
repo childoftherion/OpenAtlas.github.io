@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Illustration of a compact quadcopter drone">
+  <defs>
+    <linearGradient id="d-bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#202d38"/>
+      <stop offset="1" stop-color="#0b0d0e"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#d-bg)"/>
+  <ellipse cx="300" cy="410" rx="150" ry="8" fill="#000" opacity="0.4"/>
+  <g transform="translate(300,225)">
+    <g stroke="#e89558" stroke-width="1" opacity="0.25" fill="none">
+      <path d="M-220,0 L220,0"/>
+      <path d="M0,-160 L0,160"/>
+    </g>
+    <ellipse cx="0" cy="0" rx="70" ry="40" fill="#c9ced3" stroke="#2a2f33" stroke-width="2"/>
+    <ellipse cx="0" cy="-4" rx="56" ry="28" fill="#e6e8eb"/>
+    <circle cx="0" cy="18" r="10" fill="#1a1d20" stroke="#2a2f33" stroke-width="2"/>
+    <circle cx="0" cy="18" r="4" fill="#e89558"/>
+    <g stroke="#c9ced3" stroke-width="6" stroke-linecap="round">
+      <line x1="-55" y1="-20" x2="-140" y2="-70"/>
+      <line x1="55" y1="-20" x2="140" y2="-70"/>
+      <line x1="-55" y1="20" x2="-140" y2="70"/>
+      <line x1="55" y1="20" x2="140" y2="70"/>
+    </g>
+    <g fill="#1a1d20" stroke="#2a2f33" stroke-width="2">
+      <circle cx="-140" cy="-70" r="14"/>
+      <circle cx="140" cy="-70" r="14"/>
+      <circle cx="-140" cy="70" r="14"/>
+      <circle cx="140" cy="70" r="14"/>
+    </g>
+    <g stroke="#7d868f" stroke-width="1.5" opacity="0.55" fill="none">
+      <ellipse cx="-140" cy="-70" rx="34" ry="6"/>
+      <ellipse cx="140" cy="-70" rx="34" ry="6"/>
+      <ellipse cx="-140" cy="70" rx="34" ry="6"/>
+      <ellipse cx="140" cy="70" rx="34" ry="6"/>
+    </g>
+    <circle cx="-140" cy="-70" r="2" fill="#e89558"/>
+    <circle cx="140" cy="70" r="2" fill="#e89558"/>
+  </g>
+</svg>

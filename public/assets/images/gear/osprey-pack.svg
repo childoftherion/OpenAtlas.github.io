@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Illustration of a hiking backpack">
+  <defs>
+    <linearGradient id="b-bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1c2430"/>
+      <stop offset="1" stop-color="#0b0d0e"/>
+    </linearGradient>
+    <linearGradient id="b-pack" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#3e4d3b"/>
+      <stop offset="1" stop-color="#1d2a1e"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#b-bg)"/>
+  <ellipse cx="300" cy="415" rx="150" ry="10" fill="#000" opacity="0.35"/>
+  <g transform="translate(300,240)">
+    <path d="M-100,-170 Q-110,-120 -120,0 L-130,100 Q-130,140 -90,150 L90,150 Q130,140 130,100 L120,0 Q110,-120 100,-170 Q80,-180 0,-180 Q-80,-180 -100,-170 Z" fill="url(#b-pack)" stroke="#0b1010" stroke-width="2"/>
+    <path d="M-80,-150 Q-20,-160 80,-150" stroke="#1a3a2a" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M-60,-100 L60,-100 L55,-20 L-55,-20 Z" fill="#1d2a1e" stroke="#0b1010" stroke-width="1.5"/>
+    <circle cx="-50" cy="-60" r="3" fill="#e89558"/>
+    <circle cx="50" cy="-60" r="3" fill="#e89558"/>
+    <rect x="-70" y="10" width="140" height="50" rx="8" fill="#1a2619" stroke="#0b1010" stroke-width="1.5"/>
+    <rect x="-12" y="18" width="24" height="34" rx="3" fill="#e89558"/>
+    <g stroke="#0b1010" stroke-width="1.5" fill="none">
+      <path d="M-80,80 L80,80"/>
+      <circle cx="-60" cy="80" r="4" fill="#1a2619"/>
+      <circle cx="60" cy="80" r="4" fill="#1a2619"/>
+    </g>
+  </g>
+</svg>

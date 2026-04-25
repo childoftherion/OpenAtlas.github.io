@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Illustration of a hammock slung between two trees">
+  <defs>
+    <linearGradient id="h-sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1a2530"/>
+      <stop offset="1" stop-color="#0b0d0e"/>
+    </linearGradient>
+    <linearGradient id="h-ember" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#e89558"/>
+      <stop offset="1" stop-color="#d06a2f"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#h-sky)"/>
+  <g opacity="0.25" fill="#4b5867">
+    <circle cx="80" cy="70" r="1.5"/><circle cx="150" cy="40" r="1"/><circle cx="220" cy="85" r="1.5"/>
+    <circle cx="310" cy="55" r="1"/><circle cx="400" cy="90" r="1.5"/><circle cx="470" cy="40" r="1"/>
+    <circle cx="540" cy="70" r="1.5"/><circle cx="60" cy="150" r="1"/><circle cx="250" cy="160" r="1"/>
+  </g>
+  <path d="M0,360 Q150,330 300,345 T600,355 L600,450 L0,450 Z" fill="#1d2a2a"/>
+  <g stroke="#2f4342" stroke-width="6" stroke-linecap="round">
+    <line x1="110" y1="360" x2="110" y2="90"/>
+    <line x1="490" y1="360" x2="490" y2="90"/>
+  </g>
+  <g fill="#1f3230" opacity="0.9">
+    <ellipse cx="110" cy="90" rx="55" ry="80"/>
+    <ellipse cx="490" cy="90" rx="55" ry="80"/>
+  </g>
+  <path d="M130,205 C240,320 360,320 470,205" stroke="#2a2a2a" stroke-width="5" fill="none"/>
+  <path d="M130,205 C240,325 360,325 470,205 L470,215 C360,335 240,335 130,215 Z" fill="url(#h-ember)" opacity="0.95"/>
+  <path d="M150,250 L150,300 M180,265 L180,315 M210,275 L210,325 M240,280 L240,328 M270,282 L270,330 M300,282 L300,330 M330,282 L330,330 M360,280 L360,328 M390,275 L390,325 M420,265 L420,315 M450,250 L450,300" stroke="#b14d1a" stroke-width="2" opacity="0.5"/>
+  <circle cx="300" cy="298" r="4" fill="#0b0d0e" opacity="0.3"/>
+</svg>
