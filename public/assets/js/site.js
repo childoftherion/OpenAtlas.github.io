@@ -85,26 +85,12 @@ function isActive(href) {
  */
 function renderMark() {
   return html`
-    <svg class="brand__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.6" />
-      <circle cx="16" cy="16" r="2.25" fill="currentColor" />
-      <path d="M16 4.5 L18.5 15.5 L16 13 L13.5 15.5 Z" fill="currentColor" />
-      <path
-        d="M16 27.5 L13.5 16.5 L16 19 L18.5 16.5 Z"
-        fill="currentColor"
-        opacity=".55"
-      />
-      <path
-        d="M4.5 16 L15.5 13.5 L13 16 L15.5 18.5 Z"
-        fill="currentColor"
-        opacity=".55"
-      />
-      <path
-        d="M27.5 16 L16.5 18.5 L19 16 L16.5 13.5 Z"
-        fill="currentColor"
-        opacity=".55"
-      />
-    </svg>
+    <img 
+      class="brand__mark" 
+      src="${withBase("/assets/images/Final Site Brand.svg")}" 
+      alt="" 
+      aria-hidden="true"
+    />
   `;
 }
 
@@ -147,13 +133,8 @@ export function renderHeader() {
     <header class="site-header is-floating" data-site-header-el>
       <div class="container site-header__inner">
         <a class="brand" href="${esc(withBase("/"))}" aria-label="${esc(site.brand.name)} — home">
-          ${renderMark()}
-          <span class="brand__name"
-            ><b>${esc(site.brand.name)}</b>${site.brand.aside
-              ? ` ${esc(site.brand.aside)}`
-              : ""}</span
-          >
-        </a>
+  ${renderMark()}
+</a>
 
         <nav class="primary-nav" aria-label="Primary">
           <ul class="primary-nav__list">
@@ -261,21 +242,16 @@ export function renderFooter() {
       <div class="container">
         <div class="site-footer__grid">
           <div class="site-footer__brand">
-            <a
-              class="brand"
-              href="${esc(withBase("/"))}"
-              aria-label="${esc(site.brand.name)} — home"
-            >
-              ${renderMark()}
-              <span class="brand__name"
-                ><b>${esc(site.brand.name)}</b>${site.brand.aside
-                  ? ` ${esc(site.brand.aside)}`
-                  : ""}</span
-              >
-            </a>
-            <p class="site-footer__tagline">${esc(site.description)}</p>
-            <p class="site-footer__tagline">“${esc(site.brand.tagline)}”</p>
-          </div>
+  <a
+    class="brand"
+    href="${esc(withBase("/"))}"
+    aria-label="${esc(site.brand.name)} — home"
+  >
+    ${renderMark()}
+  </a>
+  <p class="site-footer__tagline">${esc(site.description)}</p>
+  <p class="site-footer__tagline">“${esc(site.brand.tagline)}”</p>
+</div>
           ${cols}
         </div>
         <div class="site-footer__bottom">

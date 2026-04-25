@@ -2,24 +2,23 @@
 // tagline, or copyright notice.
 
 export const site = {
-  brand: { name: "Open Atlas", aside: "Gear", tagline: "The road is calling." },
+  brand: { name: "Open Atlas", tagline: "The road is calling." },
   description:
     "Honest, field-tested stories from overlanding in the Pacific Northwest and beyond. Built around the FJ13 Toyota FJ Cruiser.",
   copyrightHolder: "Open Atlas",
   copyrightYear: 2026,
-  nav: [
-    { label: "Explore", href: "/pages/explore/" },
-    { label: "Pacific Northwest", href: "/pages/pacific-northwest/" },
-    { label: "FJ13", href: "/pages/fj13/" },
-    { label: "Our Gear", href: "/pages/our-gear/" },
-    { label: "Resources", href: "/pages/resources/" },
-    { label: "About", href: "/pages/about/" },
-    {
-      label: "Fuel the Adventure",
-      href: "/pages/fuel-the-adventure/",
-      cta: true,
-    },
-  ],
+nav: [
+  { label: "Explore", href: "/pages/explore/" },
+  { label: "About", href: "/pages/about/" },
+  { label: "Pacific Northwest", href: "/pages/pacific-northwest/" },
+  { label: "Our Gear", href: "/pages/our-gear/" },
+  { label: "FJ13", href: "/pages/fj13/" },
+  {
+    label: "Fuel the Adventure",
+    href: "/pages/fuel-the-adventure/",
+    cta: true,
+  },
+],
   footerColumns: [
     {
       title: "Adventures",
