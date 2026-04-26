@@ -19,6 +19,7 @@ const pageInits = {
     import("./pages/pnw.js").then((m) => m.init()),
   fj13: () => import("./pages/fj13.js").then((m) => m.init()),
   gear: () => import("./pages/gear.js").then((m) => m.init()),
+  library: () => import("./pages/library.js").then((m) => m.init()),
   fuel: () => import("./pages/fuel.js").then((m) => m.init()),
   contact: () => import("./pages/contact.js").then((m) => m.init()),
   journal: () => import("./pages/journal.js").then((m) => m.init()),
