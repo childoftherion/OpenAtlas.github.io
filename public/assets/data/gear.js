@@ -21,7 +21,7 @@ export const gearCategories = [
           "Weight: featherweight under a headlamp strap.",
           "Finish holds up to sweat, rain, and the occasional slot-canyon scrape.",
         ],
-        links: [{ label: "Affiliate link", href: "#" }],
+        links: [{ label: "Affiliate link", href: "https://amzn.to/41PP4KR" }],
       },
     ],
   },
@@ -44,9 +44,9 @@ export const gearCategories = [
         ],
         review: "yeti-rambler-26oz-review",
         links: [
-          { label: "30 oz Tumbler", href: "#" },
-          { label: "10 oz Mug", href: "#" },
-          { label: "26 oz Bottle", href: "#" },
+          { label: "30 oz Tumbler", href: "https://amzn.to/3QtNKe8" },
+          { label: "10 oz Mug", href: "https://amzn.to/4mQcPvH" },
+          { label: "26 oz Bottle", href: "https://amzn.to/4tydkNy" },
         ],
       },
     ],
@@ -69,7 +69,7 @@ export const gearCategories = [
           "Insulated walls keep the second cup hot 30 min later.",
           "Big enough for two, small enough to pack every trip.",
         ],
-        links: [{ label: "Affiliate link", href: "#" }],
+        links: [{ label: "Affiliate link", href: "https://amzn.to/48ipCRN" }],
       },
     ],
   },
@@ -90,7 +90,7 @@ export const gearCategories = [
           "Pack weight in the low four-pound range.",
           "Shoulder sling carries; sets up in under five minutes at camp.",
         ],
-        links: [{ label: "Affiliate link", href: "#" }],
+        links: [{ label: "Affiliate link", href: "https://amzn.to/496g1xC" }],
       },
       {
         brand: "Therm-a-Rest",
@@ -161,8 +161,8 @@ export const gearCategories = [
           "Mounts to the FJ13's windshield with the suction kit.",
         ],
         links: [
-          { label: "Montana 710i (affiliate)", href: "#" },
-          { label: "Suction Cup Mount (affiliate)", href: "#" },
+          { label: "Montana 710i (affiliate)", href: "https://amzn.to/4mQdRrz" },
+          { label: "Suction Cup Mount (affiliate)", href: "https://amzn.to/48ivTwP" },
         ],
       },
       {
@@ -177,7 +177,7 @@ export const gearCategories = [
           "Barometric altimeter + compass for quick orientation.",
           "10 ATM water rating for rivers and rainstorms.",
         ],
-        links: [{ label: "Affiliate link", href: "#" }],
+        links: [{ label: "Affiliate link", href: "https://amzn.to/4t0V3HL" }],
       },
       {
         brand: "DJI",
@@ -196,9 +196,9 @@ export const gearCategories = [
     ],
   },
   {
-    id: "fj13-overlanding",
-    title: "FJ13 Overlanding",
-    tag: "Trail rig essentials",
+    id: "FJ13",
+    title: "Overlanding in the FJ13",
+    tag: "Get out there and stay out there",
     items: [
       {
         brand: "MAXTRAX",

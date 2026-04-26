@@ -4,7 +4,7 @@
 export const site = {
   brand: { name: "Open Atlas", tagline: "The road is calling." },
   description:
-    "Honest, field-tested stories from overlanding in the Pacific Northwest and beyond. Built around the FJ13 Toyota FJ Cruiser.",
+    "Practical field notes, honest gear reviews, and real stories from the backroads of the Pacific Northwest, with FJ13 taking us there.",
   copyrightHolder: "Open Atlas",
   copyrightYear: 2026,
 nav: [
@@ -12,6 +12,7 @@ nav: [
   { label: "About", href: "/pages/about/" },
   { label: "Pacific Northwest", href: "/pages/pacific-northwest/" },
   { label: "Our Gear", href: "/pages/our-gear/" },
+  { label: "Library", href: "/pages/library/" },
   { label: "FJ13", href: "/pages/fj13/" },
   {
     label: "Fuel the Adventure",
@@ -49,25 +50,25 @@ nav: [
     {
       title: "Destinations that matter",
       body:
-        "Waterfalls, lava tubes, forest roads, and the quiet corners most maps gloss over.",
+        "Waterfalls, lava tubes, forest roads, and the quiet corners most maps gloss over. Our destinations are curated based on each of their unique qualities. You won’t find any hyped up rants or raves about that side of the road tourist attraction.",
       icon: "map",
     },
     {
       title: "Gear we actually use",
       body:
-        "Reviews informed by miles of trail, mud, condensation, and the occasional river dunk.",
+        "Our gear reviews are informed by miles of trail, mud, condensation, and the occasional river dunk. We can’t give you a true review until we try to break something or have to recover our favorite water container from the banks of the Rogue Gorge.",
       icon: "compass",
     },
     {
       title: "A rig, kept ready",
       body:
-        "The FJ13 is how we get to the good stuff. Keeping it capable is half the work.",
+        "The FJ13 is the foundation of our explorations and how we get to the good stuff. Keeping it capable is half the work. We share the maintenance, repairs, and upgrades that keep it ready for the next adventure.",
       icon: "truck",
     },
     {
       title: "Leave it better",
       body:
-        "We travel on public lands. That means pack it out, tread lightly, and respect the places that let us in.",
+        "We travel on public roadways and explore the best that our public lands have to offer. That means tread lightly, respect the access we have been granted, and pack it out, even if we didn’t bring it in. The forests, rivers, trails, and caves belong to us all. We lead by example to keep these places ready to awe the next visitor just as much as it did for us.",
       icon: "leaf",
     },
   ],

@@ -120,6 +120,55 @@ folder (dark background gradient + ember accent geometry). The gear media
 tile automatically switches SVGs to `object-fit: contain` with padding, so
 illustrations read cleanly without cropping.
 
+### Add new reference materials (Library)
+
+Open `public/assets/data/library.js` and push into the right category's `items` array.
+Each item supports:
+
+| Field | Description |
+|-------|-------------|
+| `author` | Author name (displayed as category tag) |
+| `name` | Book/title name (displayed as title) |
+| `publisher` | Publisher name (displayed below title) |
+| `image` | Path to cover image in `/assets/images/library/` |
+| `imageAlt` | Alt text for the image |
+| `blurb` | Short description of the item |
+| `details` | Array of bullet points with additional info |
+| `links` | Array of `{ label, href }` for buy/affiliate links |
+| `review` | Optional slug to link to a journal review |
+
+**Example item:**
+```javascript
+{
+  author: "Author Name",
+  name: "Book Title",
+  publisher: "Publisher Name",
+  image: "/assets/images/library/my-book.jpg",
+  imageAlt: "Book cover description",
+  blurb: "Short description of why this is recommended",
+  details: [
+    "Key detail 1",
+    "Key detail 2",
+    "Key detail 3"
+  ],
+  links: [{ label: "Buy on Amazon", href: "https://..." }]
+}
+```
+
+**To add a new category:** Add a new object to `libraryCategories`:
+```javascript
+{
+  id: "category-id",
+  title: "Category Title",
+  tag: "Short tagline",
+  items: [
+    // ... book items
+  ]
+}
+```
+
+**Images:** Drop cover images into `public/assets/images/library/` and reference by relative path.
+
 ### Update FJ13
 
 Everything — specs, gallery, and upgrades — is in `public/assets/data/fj13.js`.
