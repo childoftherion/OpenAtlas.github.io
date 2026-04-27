@@ -1,25 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>TEST — Open Atlas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600&amp;family=Manrope:wght@400;500;600;700&amp;family=Fira+Code:wght@400;500&amp;display=swap" />
-  <link rel="icon" href="../../assets/images/meta/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="../../assets/css/tokens.css" />
-  <link rel="stylesheet" href="../../assets/css/base.css" />
-  <link rel="stylesheet" href="../../assets/css/components.css" />
-  <link rel="stylesheet" href="../../assets/css/pages.css" />
-</head>
-<body data-page="test">
-  <a class="skip-link" href="#main">Skip to content</a>
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
 
-  <div data-site-header></div>
-
-  <main id="main">
+<a class="skip-link" href="#main">Skip to content</a>
+<BaseLayout
+  title="TEST — Open Atlas"
+  description=""
+  ogImage="https://openatlas.wiki/assets/images/hero/site-hero.jpg"
+  pageId="test"
+  assetPrefix="../../"
+>
     <section class="hero hero--short">
       
       <div class="container hero__content reveal">
@@ -37,10 +27,4 @@
         TESTTING
       </div>
     </section>
-  </main>
-
-  <div data-site-footer></div>
-
-  <script type="module" src="../../assets/js/main.js"></script>
-</body>
-</html>
+</BaseLayout>
