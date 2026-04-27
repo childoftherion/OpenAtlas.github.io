@@ -48,6 +48,8 @@ npm run preview
 │       └── icons/                   reserved for shared inline SVGs
 └── src/
     ├── env.d.ts
+    ├── layouts/                     Shared Astro layout components
+    │   └── BaseLayout.astro         Main layout with Google Analytics, head, header/footer
     └── pages/                       Astro-native route files
         ├── index.astro              /
         ├── 404.astro                /404.html
@@ -56,13 +58,13 @@ npm run preview
 
 ## How the site is wired
 
-- Every page loads the same four stylesheets and boots `public/assets/js/main.js` via a path relative to that HTML file.
+- Every page uses `BaseLayout.astro` which provides the HTML boilerplate, loads the same four stylesheets, includes Google Analytics, and boots `public/assets/js/main.js` via a path relative to that HTML file.
 
-- `main.js` renders the shared **header** and **footer** into `<div data-site-header></div>` and `<div data-site-footer></div>` slots, so you only define the chrome in one place (`public/assets/data/site.js` + `public/assets/js/site.js`). If the site is ever served under a URL prefix, that prefix is derived automatically using `import.meta.url`.
+- `BaseLayout` renders the shared **header** and **footer** into `<div data-site-header></div>` and `<div data-site-footer></div>` slots, so you only define the chrome in one place (`public/assets/data/site.js` + `public/assets/js/site.js`). If the site is ever served under a URL prefix, that prefix is derived automatically using `import.meta.url`.
 
-- If a page sets `<body data-page="home">`, `main.js` dynamically imports `public/assets/js/pages/home.js` and calls its `init()` function.
+- If a page sets `pageId="home"`, `main.js` dynamically imports `public/assets/js/pages/home.js` and calls its `init()` function.
 
-- Reveal-on-scroll is automatic for any element with the `reveal` class `prefers-reduced-motion` is respected.
+- Reveal-on-scroll is automatic for any element with the `reveal` class. `prefers-reduced-motion` is respected.
 
 ## Editing content
 
@@ -72,12 +74,58 @@ Edit `public/assets/data/site.js`.
 
 ### Add a journal entry
 
-1. Copy an existing route under `src/pages/pages/journal/` (e.g.
-   `src/pages/pages/journal/yeti-rambler-26oz-review.astro`).
-2. Create your new route as `src/pages/pages/journal/new-trip.astro`.
-3. Update the `<title>`, meta description, breadcrumbs, and body content.
-4. Set `data-slug="new-trip"` on `<body>` (drives the "more posts" list).
-5. Open `public/assets/data/posts.js` and prepend a new entry:
+1. Create your new route as `src/pages/pages/journal/new-trip.astro`.
+2. Use the `BaseLayout` component and fill in your content:
+
+   ```astro
+   ---
+   import BaseLayout from '../../../layouts/BaseLayout.astro';
+   ---
+
+   <BaseLayout
+     title="Your Entry Title — Open Atlas"
+     description="Brief description for SEO and social sharing."
+     ogImage="https://openatlas.wiki/assets/images/posts/new-trip-hero.jpg"
+     pageId="journal"
+     dataSlug="new-trip"
+     assetPrefix="../../../"
+   >
+     <header class="article-header">
+       <div class="container container--narrow">
+         <nav aria-label="Breadcrumb">
+           <ol class="breadcrumbs">
+             <li><a href="../../../">Home</a></li>
+             <li><a href="../../explore/">Explore</a></li>
+             <li>Your Entry Title</li>
+           </ol>
+         </nav>
+         <div class="article-meta">
+           <span class="article-meta__category">Destination</span>
+           <span>By freedomland</span>
+           <span>·</span>
+           <time datetime="2026-05-01">May 1, 2026</time>
+         </div>
+         <h1>Your full article headline.</h1>
+       </div>
+     </header>
+
+     <article class="article-body">
+       <div class="container container--narrow">
+         <!-- Your article content here -->
+       </div>
+     </article>
+   </BaseLayout>
+   ```
+
+   **BaseLayout props:**
+   - `title` — Page title (appears in browser tab and social shares)
+   - `description` — Meta description for SEO
+   - `ogImage` — Full URL to hero image for social sharing
+   - `pageId` — Sets `data-page` attribute (use `"journal"` for journal entries)
+   - `dataSlug` — Sets `data-slug` attribute (drives the "more posts" list)
+   - `assetPrefix` — Path prefix for assets (`../../../` for journal depth)
+
+3. Open `public/assets/data/posts.js` and prepend a new entry:
 
    ```js
    {
@@ -99,6 +147,49 @@ Edit `public/assets/data/site.js`.
 
 That's it — the entry now shows up on the home page, on `/pages/explore/`,
 and in the "more posts" row of every existing journal entry.
+
+### Add a regular page (not a journal entry)
+
+1. Create your route as `src/pages/pages/my-page.astro`.
+2. Use the `BaseLayout` component with the appropriate `assetPrefix`:
+
+   ```astro
+   ---
+   import BaseLayout from '../../layouts/BaseLayout.astro';
+   ---
+
+   <BaseLayout
+     title="My Page Title — Open Atlas"
+     description="Brief description for SEO and social sharing."
+     ogImage="https://openatlas.wiki/assets/images/hero/my-page-hero.jpg"
+     pageId="my-page"
+     assetPrefix="../../"
+   >
+     <section class="hero hero--short">
+       <div class="hero__media">
+         <img src="../../assets/images/hero/my-page-hero.jpg" alt="Description" />
+       </div>
+       <div class="container hero__content">
+         <nav aria-label="Breadcrumb">
+           <ol class="breadcrumbs">
+             <li><a href="../../">Home</a></li>
+             <li>My Page Title</li>
+           </ol>
+         </nav>
+         <span class="hero__eyebrow">Optional eyebrow</span>
+         <h1 class="hero__title">Page headline.</h1>
+         <p class="hero__sub">Subtitle or short description.</p>
+       </div>
+     </section>
+
+     <!-- Your page sections here -->
+   </BaseLayout>
+   ```
+
+   **Asset prefix guide:**
+   - Root pages (`src/pages/index.astro`, `src/pages/404.astro`): `assetPrefix="./"`
+   - Pages in `src/pages/pages/`: `assetPrefix="../../"`
+   - Journal entries in `src/pages/pages/journal/`: `assetPrefix="../../../"`
 
 ### Add a PNW destination
 
