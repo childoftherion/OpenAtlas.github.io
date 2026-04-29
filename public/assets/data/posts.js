@@ -5,6 +5,20 @@
 
 export const posts = [
   {
+    slug: "west-coast-awakens-earthquakes",
+    title: "West Coast Awakens: Recent Oregon and California Earthquakes Rumble the Rugged Frontier",
+    excerpt:
+      "A restless stretch of the West Coast has been rumbling beneath the surface, with recent earthquakes in Oregon and California reminding residents that the ground here never truly sleeps.",
+    category: "Field Report",
+    tags: ["Earthquakes", "Oregon", "California", "News"],
+    author: "freedomland",
+    date: "2026-04-26",
+    image: "/assets/images/posts/west-coast-awakens-earthquakes-hero.png",
+    imageAlt: "Map showing recent earthquake activity along the West Coast.",
+    url: "/pages/journal/west-coast-awakens-earthquakes/",
+    readMinutes: 3,
+  },
+  {
     slug: "yeti-rambler-26oz-review",
     title: "YETI Rambler 26oz Water Bottle: Full Review, Pros, Cons, and Specs",
     excerpt:
@@ -88,6 +102,45 @@ export const posts = [
     imageAlt: "Hug Point sea arch on the Oregon coast at low tide.",
     url: "/pages/journal/oregon-coast-101-highlights/",
     readMinutes: 8,
+  },
+  {
+    slug: "umpqua-hot-springs",
+    title: "Umpqua Hot Springs: Oregon's Steamy Paradise Awaits Your Soak",
+    excerpt: "Umpqua Hot Springs offers tiered geothermal pools from 100-115°F in Oregon's Umpqua National Forest, a magical escape blending rugged beauty and relaxation.",
+    category: "Destination",
+    tags: ["Hot Springs", "Hiking", "US Forest Service", "Oregon"],
+    author: "freedomland",
+    date: "2026-04-28",
+    image: "/assets/images/posts/umpqua-hot-springs-hero.jpg",
+    imageAlt: "Umpqua Hot Springs' tiered geothermal pools cascading down a travertine terrace.",
+    url: "/pages/journal/umpqua-hot-springs/",
+    readMinutes: 3,
+  },
+  {
+    slug: "rogue-rock-gym-rises-again",
+    title: "Rogue Rock Gym Rises Again: Medford’s Climbing Community Prepares for a Comeback",
+    excerpt: "The story of Rogue Rock Gym's closure and planned reopening reflects the resilience of Medford's climbing community after an unexpected shutdown.",
+    category: "Field Report",
+    tags: ["Rock Climbing", "Community", "Medford", "Oregon"],
+    author: "freedomland",
+    date: "2026-04-28",
+    image: "/assets/images/posts/rogue-rock-gym-rises-again-hero.jpg",
+    imageAlt: "Rogue Rock Gym in Medford, Oregon, ready for its reopening under new ownership.",
+    url: "/pages/journal/rogue-rock-gym-rises-again/",
+    readMinutes: 2,
+  },
+  {
+    slug: "adventure-outdoors-sports-challenge-excite-teach",
+    title: "Adventure Outdoors: Sports That Challenge, Excite, and Teach",
+    excerpt: "Outdoor sports build confidence, stamina, and skills in middle school students through adventures like hiking, biking, climbing, and kayaking.",
+    category: "Field Notes",
+    tags: ["Outdoor Sports", "Adolescents", "Education", "Health"],
+    author: "freedomland",
+    date: "2026-04-28",
+    image: "/assets/images/posts/adventure-outdoors-sports-challenge-excite-teach-hero.jpg",
+    imageAlt: "Students participating in outdoor sports like hiking and kayaking.",
+    url: "/pages/journal/adventure-outdoors-sports-challenge-excite-teach/",
+    readMinutes: 4,
   },
 ];
 
