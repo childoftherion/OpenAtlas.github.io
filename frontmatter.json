@@ -13,7 +13,7 @@
     },
     {
       "title": "Journal Posts",
-      "path": "[[workspace]]/src/content/journal",
+      "path": "[[workspace]]/src/pages/pages/journal",
       "file": null
     },
     {
@@ -118,8 +118,8 @@
     },
     {
       "name": "Journal Post",
-      "pageBundle": false,
-      "previewPath": "pages/journal",
+      "pageBundle": true,
+      "previewPath": "pages/journal/[slug]",
       "filePrefix": null,
       "clearEmpty": true,
       "fields": [

@@ -1,0 +1,121 @@
+---
+const title = "Oregon Coast 101: Hug Point, Cape Meares, and Why You Slow Down";
+const description = "A quiet weekend tracing Highway 101 — low-tide arches at Hug Point, the crooked Sitka spruce on Cape Meares, and the slow rhythm of running the coast on FJ time.";
+const pubDate = "2026-04-05";
+const heroImage = "assets/images/travel/support-hug-point.jpg";
+const author = "freedomland";
+const category = "Destination";
+const tags = ["Coast", "Oregon", "Overlanding", "Road Trip"];
+const readMinutes = 8;
+const ogTitle = "Oregon Coast 101: Hug Point, Cape Meares, and Why You Slow Down";
+const ogDescription = "A quiet weekend tracing Highway 101 — low-tide arches at Hug Point and the crooked Sitka spruce on Cape Meares.";
+const ogImage = "assets/images/travel/support-hug-point.jpg";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — Open Atlas</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b0d0e" />
+    <link rel="icon" href="/assets/images/meta/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/tokens.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/pages.css" />
+    <meta property="og:title" content={ogTitle || title} />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content={ogDescription || description} />
+    <meta property="og:image" content={`https://openatlas.wiki/${ogImage || heroImage}`} />
+    <meta property="og:url" content={`https://openatlas.wiki/pages/journal/oregon-coast-101-highlights/`} />
+    <meta property="og:site_name" content="Open Atlas" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href={`https://openatlas.wiki/pages/journal/oregon-coast-101-highlights/`} />
+    <meta name="datePublished" content={new Date(pubDate).toISOString()} />
+  </head>
+  <body data-page="journal">
+    <div data-site-header></div>
+    <main id="main">
+      <section class="hero hero--short">
+        <div class="hero__media">
+          <img src={`/${heroImage}`} alt={title} />
+        </div>
+        <div class="container hero__content">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumbs">
+              <li><a href="/">Home</a></li>
+              <li><a href="/pages/explore/">Explore</a></li>
+              <li>{title}</li>
+            </ol>
+          </nav>
+          <span class="hero__eyebrow">{category}</span>
+          <h1 class="hero__title">{title}</h1>
+          <p class="hero__sub">By {author} · {new Date(pubDate).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })} · {readMinutes} min read</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <article class="journal-article">
+            <div class="journal-content">
+              <h2>Why the Oregon Coast</h2>
+              <p>The Oregon Coast is 363 miles of public beaches, rocky headlands, and small towns that feel like they haven't changed in decades. Highway 101 runs the length of it, sometimes right on the water, sometimes inland through forest and farmland. The speed limit is 55, the passing lanes are rare, and the whole thing rewards slowing down.</p>
+              <p>We did a weekend run from Portland to Cannon Beach, south to Hug Point, then inland to Cape Meares and back. It's a short trip — 200 miles total — but it packs in sea stacks, tide pools, old-growth forest, and one very crooked tree. This is the coast on FJ time: slow, flexible, and built around the tides.</p>
+              <h2>Hug Point</h2>
+              <p>Hug Point is a state recreation site south of Cannon Beach, named for the way the old highway used to "hug" the point before they blasted the current road through. At low tide, you can walk around the point on the beach, through a short tunnel, and into a cove with a waterfall and sea caves. At high tide, the point is impassable and the cove is cut off.</p>
+              <p>The key to Hug Point is timing. Check the tide tables, arrive at least an hour before low tide, and give yourself two hours to explore. The tunnel is short — maybe 50 feet — but it's dark and the floor is uneven. The cove beyond has a seasonal waterfall, sea caves at the back, and tide pools full of anemones and starfish.</p>
+              <h2>Cannon Beach</h2>
+              <p>Cannon Beach is the most famous stop on the Oregon Coast, and for good reason. Haystack Rock is a 235-foot sea stack that dominates the beach, home to puffins in summer and tide pools at its base year-round. The town is upscale-touristy — art galleries, seafood restaurants, hotels with ocean views — but the beach itself is public and accessible.</p>
+              <p>We stayed at a campground south of town and walked the beach at sunrise, when the light on Haystack Rock is golden and the tide pools are exposed. The beach is wide, flat, and hard-packed sand — easy walking for miles. The rocks along the shoreline are full of mussels, barnacles, and the occasional starfish.</p>
+              <h2>Cape Meares</h2>
+              <p>Cape Meares is a small promontory north of Tillamook, home to a lighthouse, a viewpoint, and the Octopus Tree — a massive Sitka spruce with multiple trunks that grow out like tentacles. The tree is the main attraction for us. It's estimated to be 250–300 years old, and no one knows why it grew this way. Wind damage, disease, and Native American cultivation have all been proposed.</p>
+              <p>The viewpoint at Cape Meares looks south over Three Arch Rocks, a National Wildlife Refuge that's home to seabirds and sea lions. The lighthouse is the shortest in Oregon — only 38 feet tall — but it sits on a 200-foot cliff, so the light is 223 feet above sea level. The grounds are open, the lighthouse is closed for renovation, and the whole place feels like a secret.</p>
+              <h2>Practical notes</h2>
+              <ul>
+                <li><strong>Route:</strong> Highway 101 is the only way. It's two lanes most of the way, winding and slow. Plan for 40 mph average.</li>
+                <li><strong>Tides:</strong> Everything on the coast is tide-dependent. Check tide tables before you go.</li>
+                <li><strong>Weather:</strong> The coast is cool and foggy even in summer. Bring layers.</li>
+                <li><strong>Crowds:</strong> Cannon Beach is busy year-round. Hug Point is less crowded but still popular. Cape Meares is quiet.</li>
+              </ul>
+              <h2>What we learned</h2>
+              <p>The Oregon Coast rewards patience. The 55 mph speed limit is a gift — it forces you to slow down and look. The tide pools require you to wait for the right time. The fog might clear by afternoon, or it might not. Either way, the coast is there, unchanged, and ready for you to explore.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer></div>
+    <script type="module" src="/assets/js/main.js"></script>
+  </body>
+</html>
+<style>
+.journal-article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.journal-article h2 {
+  font-size: var(--fs-2xl);
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-2);
+}
+.journal-article h3 {
+  font-size: var(--fs-xl);
+  margin-top: var(--sp-3);
+  margin-bottom: var(--sp-1);
+}
+.journal-article p {
+  margin-bottom: var(--sp-2);
+  line-height: 1.7;
+}
+.journal-article ul, .journal-article ol {
+  margin-bottom: var(--sp-2);
+  padding-left: var(--sp-3);
+}
+.journal-article li {
+  margin-bottom: var(--sp-1);
+}
+</style>

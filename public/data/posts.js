@@ -1,5 +1,5 @@
 // Journal entries. To add a new post:
-//   1. Create `src/content/journal/<slug>.md` (use an existing post as a template).
+//   1. Create `src/pages/pages/journal/<slug>.astro` (use an existing post as a template).
 //   2. Append a new entry to this array with the same `slug`.
 //   3. Drop a cover image into `assets/images/posts/`.
 
@@ -15,7 +15,7 @@ export const posts = [
     date: "2026-04-23",
     image: "/assets/images/gear/yeti-trio.jpg",
     imageAlt: "YETI Rambler trio — tumbler, stackable mug, and water bottle.",
-    url: "/pages/journal/yeti-rambler-26oz-review/",
+    url: "/pages/journal/yeti-rambler-26oz-review",
     readMinutes: 7,
   },
   {
@@ -28,9 +28,8 @@ export const posts = [
     author: "freedomland",
     date: "2026-04-18",
     image: "/assets/images/posts/lava-beds-hero.jpg",
-    imageAlt:
-      "Visitor center at Lava Beds National Monument under a winter sky.",
-    url: "/pages/journal/lava-beds-national-monument/",
+    imageAlt: "Visitor center at Lava Beds National Monument under a winter sky.",
+    url: "/pages/journal/lava-beds-national-monument",
     readMinutes: 11,
   },
   {
@@ -44,7 +43,7 @@ export const posts = [
     date: "2026-04-17",
     image: "/assets/images/posts/tamolitch-hero.jpg",
     imageAlt: "The turquoise Blue Pool at Tamolitch Falls.",
-    url: "/pages/journal/tamolitch-falls-blue-pool/",
+    url: "/pages/journal/tamolitch-falls-blue-pool",
     readMinutes: 9,
   },
   {
@@ -58,7 +57,7 @@ export const posts = [
     date: "2026-04-16",
     image: "/assets/images/posts/valentine-featured.jpg",
     imageAlt: "Valentine Cave entrance staircase descending into cool shadow.",
-    url: "/pages/journal/valentine-cave-lava-beds/",
+    url: "/pages/journal/valentine-cave-lava-beds",
     readMinutes: 6,
   },
   {
@@ -72,7 +71,7 @@ export const posts = [
     date: "2026-04-10",
     image: "/assets/images/travel/emerald-lake.jpg",
     imageAlt: "Emerald Lake at Lassen Volcanic, ringed by snowmelt and pine.",
-    url: "/pages/journal/lassen-volcanic-national-park/",
+    url: "/pages/journal/lassen-volcanic-national-park",
     readMinutes: 10,
   },
   {
@@ -86,7 +85,7 @@ export const posts = [
     date: "2026-04-05",
     image: "/assets/images/travel/support-hug-point.jpg",
     imageAlt: "Hug Point sea arch on the Oregon coast at low tide.",
-    url: "/pages/journal/oregon-coast-101-highlights/",
+    url: "/pages/journal/oregon-coast-101-highlights",
     readMinutes: 8,
   },
 ];
@@ -105,11 +104,12 @@ export function postsByTag(tag) {
 }
 
 export function latestPosts(limit = 3) {
-  return posts.slice().sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, limit);
+  return posts
+    .slice()
+    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    .slice(0, limit);
 }
 
 export function postsByCategory(category) {
-  return posts.filter(
-    (p) => p.category.toLowerCase() === category.toLowerCase(),
-  );
+  return posts.filter((p) => p.category.toLowerCase() === category.toLowerCase());
 }
