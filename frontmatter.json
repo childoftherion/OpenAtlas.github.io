@@ -1,10 +1,9 @@
 {
-  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.framework.id": "astro",
   "frontMatter.preview.host": "http://localhost:4321",
   "frontMatter.content.publicFolder": "public",
   "frontMatter.content.mediaFolder": "assets/images",
-  "frontMatter.content.pages": "src/pages",
+  "frontMatter.content.pages": "src/content/journal",
   "frontMatter.content.pageFolders": [
     {
       "title": "Home",
@@ -12,13 +11,8 @@
       "file": "index.astro"
     },
     {
-      "title": "Journal Posts",
-      "path": "[[workspace]]/src/pages/pages/journal",
-      "file": null
-    },
-    {
-      "title": "Data Files",
-      "path": "[[workspace]]/public/data",
+      "title": "Journal Entries",
+      "path": "[[workspace]]/src/content/journal",
       "file": null
     }
   ],
@@ -117,12 +111,18 @@
       ]
     },
     {
-      "name": "Journal Post",
-      "pageBundle": true,
-      "previewPath": "pages/journal/[slug]",
+      "name": "Journal Entry",
+      "pageBundle": false,
+      "previewPath": "journal/[slug]",
       "filePrefix": null,
       "clearEmpty": true,
       "fields": [
+        {
+          "title": "Slug",
+          "name": "slug",
+          "type": "string",
+          "single": true
+        },
         {
           "title": "Title",
           "name": "title",
@@ -130,57 +130,49 @@
           "single": true
         },
         {
-          "title": "Description",
-          "name": "description",
+          "title": "Excerpt",
+          "name": "excerpt",
           "type": "string"
         },
         {
+          "title": "Category",
+          "name": "category",
+          "type": "choice",
+          "choices": ["Destination", "Field Notes", "Gear Review"]
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Author",
+          "name": "author",
+          "type": "string",
+          "default": "freedomland"
+        },
+        {
           "title": "Publishing date",
-          "name": "pubDate",
+          "name": "date",
           "type": "datetime",
           "default": "{{now}}",
           "isPublishDate": true
         },
         {
           "title": "Hero Image",
-          "name": "heroImage",
+          "name": "image",
           "type": "image",
           "isPreviewImage": true
         },
         {
-          "title": "Author",
-          "name": "author",
+          "title": "Image Alt Text",
+          "name": "imageAlt",
           "type": "string"
-        },
-        {
-          "title": "Category",
-          "name": "category",
-          "type": "category"
-        },
-        {
-          "title": "Tags",
-          "name": "tags",
-          "type": "delta"
         },
         {
           "title": "Read Time (minutes)",
           "name": "readMinutes",
           "type": "number"
-        },
-        {
-          "title": "Og Title",
-          "name": "ogTitle",
-          "type": "string"
-        },
-        {
-          "title": "Og Description",
-          "name": "ogDescription",
-          "type": "string"
-        },
-        {
-          "title": "Og Image",
-          "name": "ogImage",
-          "type": "image"
         }
       ]
     },

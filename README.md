@@ -82,9 +82,9 @@ Edit `src/data/site.ts`.
 
 ### Add a journal entry
 
-1. Copy an existing route under `src/pages/pages/journal/` (e.g.
-   `src/pages/pages/journal/yeti-rambler-26oz-review.astro`).
-2. Create your new route as `src/pages/pages/journal/new-trip.astro`.
+1. Copy an existing route under `src/pages/journal/` (e.g.
+   `src/pages/journal/yeti-rambler-26oz-review.astro`).
+2. Create your new route as `src/pages/journal/new-trip.astro`.
 3. Update the `<title>`, meta description, breadcrumbs, and body content.
 4. Set `data-slug="new-trip"` on `<body>` (drives the "more posts" list).
 5. Open `src/data/posts.ts` and prepend a new entry:
@@ -101,7 +101,7 @@ Edit `src/data/site.ts`.
      readMinutes: 7,
      image: "/assets/images/posts/new-trip-hero.jpg",
      imageAlt: "Describe the image.",
-     url: "/pages/pages/journal/new-trip/",
+     url: "/journal/new-trip",
    }
    ```
 
