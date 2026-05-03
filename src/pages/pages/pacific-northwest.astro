@@ -1,46 +1,27 @@
 ---
-title: "Pacific Northwest — Open Atlas";
-description: "Our Pacific Northwest destination directory, organized by state.";
-heroImage: "assets/images/destinations/pnw-vista.jpg";
-ogTitle: "Pacific Northwest — Open Atlas";
-ogDescription: "Our Pacific Northwest destination directory, organized by state.";
-ogImage: "assets/images/destinations/pnw-vista.jpg";
-tags: ["pacific-northwest", "destinations"];
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Pacific Northwest — Open Atlas";
+const description = "Our Pacific Northwest destination directory, organized by state.";
+const heroImage = "assets/images/destinations/pnw-vista.jpg";
+const ogTitle = "Pacific Northwest — Open Atlas";
+const ogDescription = "Our Pacific Northwest destination directory, organized by state.";
+const ogImage = "assets/images/destinations/pnw-vista.jpg";
+const tags = ["pacific-northwest", "destinations"];
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pacific Northwest — Open Atlas</title>
-    <meta
-      name="description"
-      content="Our Pacific Northwest destination directory, organized by state."
-    />
-    <meta name="theme-color" content="#0b0d0e" />
-    <link rel="icon" href="/assets/images/meta/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../assets/css/tokens.css" />
-    <link rel="stylesheet" href="../../assets/css/base.css" />
-    <link rel="stylesheet" href="../../assets/css/components.css" />
-    <link rel="stylesheet" href="../../assets/css/pages.css" />
-  </head>
-  <body data-page="pacific-northwest">
-    <div data-site-header></div>
-
-    <main id="main">
+<BaseLayout 
+  title={title}
+  description={description}
+  heroImage={heroImage}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  ogImage={ogImage}
+  bodyClass="pacific-northwest"
+>
       <section class="hero hero--short">
         <div class="hero__media">
-          <img
-            src="../../assets/images/destinations/pnw-vista.jpg"
-            alt="A Pacific Northwest vista with fog clinging to distant ridgelines."
-          />
+          <img src="../../assets/images/destinations/pnw-vista.jpg" alt="Pacific Northwest vista" />
         </div>
         <div class="container hero__content">
           <nav aria-label="Breadcrumb">
@@ -61,9 +42,4 @@ tags: ["pacific-northwest", "destinations"];
       <section class="section">
         <div class="container" data-destinations></div>
       </section>
-    </main>
-
-    <div data-site-footer></div>
-    <script type="module" src="../../assets/js/main.js"></script>
-  </body>
-</html>
+</BaseLayout>
