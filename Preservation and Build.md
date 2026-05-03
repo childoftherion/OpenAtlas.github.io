@@ -175,6 +175,24 @@ Both sets of files have diverged, with neither being a complete source of truth.
   - Removed all references to editing `public/assets/data/` files
 - Verified build still works (17 pages, 1.2s)
 
+### 2026-05-03 12:52pm
+- **Phase 5 PLANNED** — Journal Restructuring
+- Analyzed current journal structure: 6 hardcoded `.astro` files with duplicated boilerplate
+- Identified 5 key problems: nested URLs, duplicate code, data duplication, no Markdown, hardcoded sitemap
+- Plan added to document with 5 sub-phases (A through E)
+- **Estimated ~4,400 tokens needed** — recommending new session for implementation
+
+### 2026-05-03 1:03pm
+- **Phase 5A COMPLETE** — URL Restructuring
+- Moved `src/pages/pages/journal/` → `src/pages/journal/`
+- Updated import paths in all 6 `.astro` files (`../../../` → `../../`)
+- Updated 6 URLs in `src/data/posts.ts` (e.g. `/pages/journal/x` → `/journal/x`)
+- Updated 6 URLs in `astro.config.mjs` `journalUrls` array
+- Updated link in `src/pages/pages/our-gear.astro`
+- Updated `README.md` journal entry instructions
+- ✅ Build succeeds (17 pages, 1.16s) — journal URLs now `/journal/<slug>/`
+- **Actual tokens: ~350** (estimated ~500)
+
 ---
 
 ## Token Usage Tracking
@@ -184,9 +202,14 @@ Both sets of files have diverged, with neither being a complete source of truth.
 | Phase 1 (Preservation) | ~4,500 | ~2,800 | ✅ On track |
 | Phase 2 (Build Script) | ~3,500 | ~1,200 | ✅ On track |
 | Phase 4 (Cleanup & Docs) | ~1,300 | ~800 | ✅ On track |
-| **Total** | **~9,300** | **~4,800 used** | **~4,200 remaining** |
+| Phase 5A (URLs) | ~500 | ~350 | ✅ Under budget |
+| Phase 5B (Content Collections) | ~2,800 | — | Pending |
+| Phase 5C (posts.ts) | ~800 | — | Pending |
+| Phase 5D (Front Matter CMS) | ~250 | — | Pending |
+| Phase 5E (Sitemap) | ~150 | — | Pending |
+| **Total** | **~13,700** | **~5,150 used** | **~4,000 needed for 5B–E** |
 
-**Status:** ALL PHASES COMPLETE.
+**Status:** Phases 1–4, 5A COMPLETE. Phase 5B next (~2,800 tokens estimated).
 
 ### Check-in Summary
 - ✅ All content audited and preserved
@@ -249,3 +272,134 @@ npm run build:data
    - [x] Remove references to editing `public/assets/data/` files
 5. [x] Run `npm run build` to verify everything still works
 6. [x] Update this document with completion status
+
+## Phase 5: Journal Restructuring ✅ COMPLETE
+
+**Goal:** Convert journal entries from hardcoded Astro components to Markdown content collections with clean URLs and Front Matter CMS compatibility.
+
+### Current Problems Identified
+
+1. **Deeply nested URLs** — Journal URLs are `/pages/journal/<slug>/` due to `src/pages/pages/journal/` file structure. Should be `/journal/<slug>/`.
+2. **Duplicate boilerplate** — Each of the 6 `.astro` journal files repeats identical hero section, breadcrumbs, article wrapper, and inline styles. Some even duplicate `BaseLayout` closing tags (see `yeti-rambler-26oz-review.astro` lines 94-98).
+3. **Data duplication** — `src/data/posts.ts` and each `.astro` frontmatter both contain `title`, `category`, `tags`, `date`, `image`, `readMinutes`. Changing a title requires editing two files.
+4. **No Markdown** — All content is hardcoded HTML in `.astro` files. Cannot use Front Matter VS Code extension.
+5. **Hardcoded sitemap** — `astro.config.mjs` manually lists journal URLs in `customPages` array. Easy to forget new entries.
+
+### Phase A: Restructure URLs ✅ COMPLETE
+- [x] Move `src/pages/pages/journal/` → `src/pages/journal/` (eliminates `/pages/pages/` nesting)
+- [x] Result: URLs become `/journal/<slug>/` instead of `/pages/journal/<slug>/`
+- [ ] Add redirects from old URLs to preserve SEO (optional but recommended)
+- [x] Update all internal links referencing `/pages/journal/` paths
+
+### Phase B: Convert to Astro Content Collections + Markdown ✅ COMPLETE
+- [x] Create `src/content/journal/` directory with `config.ts` defining schema
+- [x] Define content collection schema matching current Post interface:
+  ```yaml
+  title, slug, excerpt, date, image, imageAlt,
+  author, category, tags, readMinutes
+  ```
+- [x] Convert each `.astro` journal file to a `.md` file with YAML frontmatter
+- [x] Article body content converted from HTML to Markdown (all 6 articles restored with full content)
+- [x] Create `src/pages/journal/[slug].astro` dynamic route template
+- [x] Create `src/pages/journal/index.astro` listing page
+- [x] Template reads from content collection and renders hero, breadcrumbs, article, and "more posts"
+- [x] Delete 6 duplicate `.astro` journal files (already removed in prior cleanup)
+- [x] Journal styles already exist in `pages.css` (`.article-header`, `.article-body`, `.more-posts`, etc.)
+
+### Phase C: Eliminate posts.ts Duplication ✅ COMPLETE
+- [x] Content collection becomes source of truth for post metadata
+- [x] Created `scripts/sync-posts.js` — reads Markdown frontmatter and regenerates `src/data/posts.ts`
+- [x] Keep helper functions (`getPostBySlug`, `getOtherPosts`, `postsByTag`, `latestPosts`, `postsByCategory`) — preserved in generated file
+- [x] Integrated sync into build pipeline: `npm run build` → sync-posts → build-data → astro build
+- [x] Build verified: 18 pages, 1.36s
+
+**Workflow:**
+```bash
+# Edit src/content/journal/*.md files, then:
+npm run build    # Auto-syncs posts.ts, generates JS, builds site
+
+# Or manually sync:
+npm run sync:posts
+```
+
+### Phase D: Front Matter CMS Compatibility ✅ COMPLETE
+- [x] Updated `frontmatter.json` config pointing at `src/content/journal/`
+- [x] Updated Journal Entry content type with correct field names:
+  - `slug`, `title`, `excerpt`, `category` (choice: Destination/Field Notes/Gear Review)
+  - `tags`, `author` (default: freedomland), `date`, `image`, `imageAlt`, `readMinutes`
+- [x] Removed obsolete page bundles, updated preview path to `journal/[slug]`
+- [x] Build verified: 18 pages, 1.31s
+
+**Usage:** Install Front Matter VS Code extension → Open journal folder → Create/edit entries with GUI
+
+### Phase E: Sitemap and Config Cleanup (Optional — Already Working)
+- [ ] Remove hardcoded `journalUrls` array from `astro.config.mjs` (cosmetic cleanup)
+- [x] Sitemap already auto-generates from content collection (Astro Sitemap handles dynamic routes)
+- [x] URLs already correct at `/journal/` (Phase 5A completed)
+
+Note: Phase 5E is effectively complete. The hardcoded `journalUrls` in `astro.config.mjs` doesn't break anything since the sitemap already auto-generates journal entries from the content collection. It can be removed as cosmetic cleanup if desired.
+
+### What This Achieves
+
+| Before | After |
+|--------|-------|
+| `/pages/journal/slug/` | `/journal/slug/` |
+| 6 duplicate `.astro` files | 1 template + 6 `.md` files |
+| Edit 2 files to change a title | Edit 1 `.md` file |
+| Hardcoded HTML content | Markdown with frontmatter |
+| Manual sitemap entries | Auto-generated from collection |
+| No CMS support | Front Matter extension compatible |
+
+### Files Created/Modified
+- `src/content.config.ts` — Astro 6.x content collection config (glob loader)
+- `src/content/journal/*.md` — 6 Markdown journal entries (full content restored)
+- `src/pages/journal/[slug].astro` — Dynamic route template
+- `src/pages/journal/index.astro` — Journal listing page
+- `scripts/sync-posts.js` — Syncs Markdown frontmatter to posts.ts
+- `frontmatter.json` — Updated for new content collection structure
+
+### Files to Modify (optional Phase 5E cleanup)
+- `astro.config.mjs` — Can remove hardcoded `journalUrls` (sitemap already auto-generates from content collection)
+- No other changes needed — all URLs already correct
+
+### Files to Delete
+- `src/pages/pages/journal/*.astro` — All 6 individual journal Astro files
+
+### Progress Log Update — 2026-05-03 1:22pm
+- **Phase 5B COMPLETE** — All 6 journal articles restored from git history and converted to Markdown
+- Retrieved original `.astro` files from git HEAD (deleted in prior cleanup)
+- Converted HTML content to Markdown (headings, lists, blockquotes, images)
+- Full content preserved for all articles:
+  - YETI Rambler 26oz review (gear review with specs, pros/cons)
+  - Lava Beds National Monument (caves, hiking, history)
+  - Tamolitch Falls / Blue Pool (hike description, geology)
+  - Valentine Cave (lava tube exploration)
+  - Lassen Volcanic (Emerald Lake, hydrothermal features)
+  - Oregon Coast 101 (Hug Point, Cape Meares)
+- Build verified: 18 pages, 2.45s
+
+### Progress Log Update — 2026-05-03 1:31pm
+- **Phase 5D COMPLETE** — Front Matter CMS configuration updated
+- Updated `frontmatter.json` with new content collection structure
+- Configured Journal Entry content type with all 10 fields (slug, title, excerpt, category, tags, author, date, image, imageAlt, readMinutes)
+- Set category choices: Destination, Field Notes, Gear Review
+- Default author set to "freedomland"
+- Preview path updated to `journal/[slug]`
+- Build verified: 18 pages, 1.31s
+
+### Phase 5 COMPLETE ✅
+
+**What was achieved:**
+- **5A:** URLs restructured from `/pages/journal/` → `/journal/`
+- **5B:** 6 Markdown journal entries with full content restored from git
+- **5C:** Auto-generated posts.ts from content collection (sync-posts script)
+- **5D:** Front Matter CMS configured for VS Code extension
+- **5E:** Sitemap already auto-generates (hardcoded URLs are cosmetic only)
+
+### Token Estimate (Final)
+- Phase A (URLs): ~350 tokens ✅
+- Phase B (Content Collections): ~2,800 tokens ✅
+- Phase C (posts.ts): ~650 tokens ✅
+- Phase D (Front Matter CMS): ~200 tokens ✅
+- Phase E (Sitemap): ~0 tokens (already working) ✅
+- **Total: ~4,000 tokens** — Phase 5 COMPLETE
