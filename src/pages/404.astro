@@ -1,39 +1,24 @@
 ---
-title: "Off the map — Open Atlas";
-description: "This page couldn't be found — but the trail never really ends.";
-heroImage: "assets/images/hero/site-hero.jpg";
-ogTitle: "Page Not Found — Open Atlas";
-ogDescription: "This page couldn't be found — but the trail never really ends.";
-ogImage: "assets/images/hero/site-hero.jpg";
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Off the map — Open Atlas";
+const description = "This page couldn't be found — but the trail never really ends.";
+const heroImage = "assets/images/hero/site-hero.jpg";
+const ogTitle = "Page Not Found — Open Atlas";
+const ogDescription = "This page couldn't be found — but the trail never really ends.";
+const ogImage = "assets/images/hero/site-hero.jpg";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Off the map — Open Atlas</title>
-    <meta
-      name="description"
-      content="This page couldn't be found — but the trail never really ends."
-    />
-    <meta name="theme-color" content="#0b0d0e" />
-    <link rel="icon" href="/assets/images/meta/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/tokens.css" />
-    <link rel="stylesheet" href="assets/css/base.css" />
-    <link rel="stylesheet" href="assets/css/components.css" />
-    <link rel="stylesheet" href="assets/css/pages.css" />
-  </head>
-  <body data-page="404">
-    <div data-site-header></div>
-
-    <main id="main" class="not-found">
+<BaseLayout 
+  title={title}
+  description={description}
+  heroImage={heroImage}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  ogImage={ogImage}
+  bodyClass="404"
+>
+      <div class="not-found">
       <div>
         <span class="eyebrow" style="justify-content: center;">Off the map</span>
         <p class="not-found__code">404</p>
@@ -49,9 +34,5 @@ ogImage: "assets/images/hero/site-hero.jpg";
           <a class="btn btn--ghost" href="pages/explore/">Browse the journal</a>
         </div>
       </div>
-    </main>
-
-    <div data-site-footer></div>
-    <script type="module" src="assets/js/main.js"></script>
-  </body>
-</html>
+    </div>
+    </BaseLayout>
