@@ -1,14 +1,19 @@
 ---
-slug: "lassen-volcanic-national-park"
+slug: lassen-volcanic-national-park
 title: "Lassen Volcanic: Emerald Lake, Lake Helen, and the Hydrothermal Basins"
-excerpt: "An overlooked National Park where a shield volcano, a plug dome, a strato, and a cinder cone sit in the same skyline — and where spring sun on alpine meltwater turns Emerald Lake unreal."
-category: "Destination"
-tags: ["Hiking", "National Park Service", "Volcano", "California"]
-author: "freedomland"
-date: "2026-04-10"
-image: "/assets/images/travel/emerald-lake.jpg"
-imageAlt: "Emerald Lake at Lassen Volcanic, ringed by snowmelt and pine."
+excerpt: An overlooked National Park where a shield volcano, a plug dome, a strato, and a cinder cone sit in the same skyline and where spring sun on alpine meltwater turns Emerald Lake unreal.
+category: Destination
+tags:
+    - Hiking
+    - National Park Service
+    - Volcano
+    - California
+author: freedomland
+date: 2026-04-10
+image: /assets/images/posts/lassen-volcanic.jpg
+imageAlt: Emerald Lake at Lassen Volcanic, ringed by snowmelt and pine.
 readMinutes: 10
+preview: /assets/images/posts/lassen-volcanic.jpg
 ---
 
 ## Why Lassen
@@ -27,19 +32,25 @@ We came in from the south on CA-89, turning off CA-36 at Mineral. The south entr
 
 ### Emerald Lake
 
+![](/assets/images/posts/emerald-lake.jpg)
+
 Emerald Lake is a roadside pullout at about 8,000 feet, a short walk below the highway. In mid-spring, it's a bowl of snowmelt-fed glacial water that catches early sun off an ice ledge and turns literally, physically green. By summer it looks more like a clear alpine tarn. Both are worth stopping for. Bring a jacket — the temperature drop from parking to lakeshore is real.
 
-![Lake Helen in the Lassen alpine, glass-smooth in early light.](/assets/images/travel/lake-helen.jpg)
-
 ### Lake Helen
+
+![](/assets/images/posts/lake-helen.jpg)
 
 Half a mile north on the highway from Emerald, Lake Helen sits in a cirque below Lassen Peak. The parking area is bigger, the water is deeper, and the colors are a darker, steadier blue. On a still morning before the wind picks up, it holds a mirror of the peak that's honestly hard to photograph badly.
 
 ### Bumpass Hell
 
+![](/assets/images/posts/bumpass-hell.jpg)
+
 A 3-mile out-and-back from the Bumpass Hell trailhead (a quarter mile south of Lake Helen) puts you on a boardwalk through the biggest hydrothermal basin in the park. Fumaroles venting sulfur, a full boiling pool, a collection of mud pots that *pop* audibly. It's the kind of place that looks cartoonish until you realize the warning signs are deadly serious. Stay on the boardwalk.
 
 ### Sulfur Works
+
+![](/assets/images/posts/sulphur-works.jpg)
 
 If the Bumpass trail is closed — it often is in shoulder season — Sulfur Works is the consolation prize right off the highway: a steaming vent, a bubbling mud pot, and enough sulfur smell to remind you that Lassen last erupted in *1915*, which is recent by geological standards.
 
@@ -70,6 +81,6 @@ Lassen Peak itself. The summit trail is a 5-mile, 2,000 ft round trip at altitud
 
 ## Resources
 
-- National Park Service — Lassen Volcanic National Park
-- USGS — Lassen Volcanic Center Volcano Hazards Program
-- Calfire / California Road Information — highway and chain controls
+- [National Park Service — Lassen Volcanic National Park](https://www.nps.gov/lavo/index.htm)
+- [USGS — Lassen Volcanic Center Volcano Hazards Program](https://www.usgs.gov/volcanoes/lassen-volcanic-center)
+- [Calfire / California Road Information — highway and chain controls](https://www.calfire.ca.gov/roadconditions)

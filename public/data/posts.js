@@ -1,5 +1,31 @@
 const posts = [
   {
+    "slug": "west-coast-awakens-oregon-california-earthquakes-rumble-rugged-frontier",
+    "title": "West Coast Awakens: Recent Oregon and California Earthquakes Rumble the Rugged Frontier",
+    "excerpt": "On Saturday afternoon, a magnitude 4.2 earthquake struck in the Pacific Ocean off Oregon, about 430 miles west of Yachats and Newport, at a depth of about six miles.",
+    "category": "Field Notes",
+    "tags": [
+      "Ashland",
+      "Blanco Fracture Zone",
+      "California",
+      "Earthquakes",
+      "Newport",
+      "Oregon",
+      "Pacific Northwest",
+      "Pacific Ocean",
+      "Port Orford",
+      "San Francisco",
+      "West Coast",
+      "Yachats"
+    ],
+    "author": "freedomland",
+    "date": "2026-05-08",
+    "image": "/assets/images/posts/West-Coast-Awakens-Oregon-Coast-hero.png",
+    "imageAlt": "a magnitude 4.2 earthquake struck in the Pacific Ocean off the coast of Oregon",
+    "url": "/journal/west-coast-awakens-oregon-california-earthquakes-rumble-rugged-frontier",
+    "readMinutes": 3
+  },
+  {
     "slug": "yeti-rambler-26oz-review",
     "title": "YETI Rambler 26oz Water Bottle: Full Review, Pros, Cons, and Specs",
     "excerpt": "The 26 oz Rambler pairs double-wall insulation with a rugged DuraCoat finish that has survived pavement drops, volcanic rock, and a dunk in the McKenzie.",
@@ -75,7 +101,7 @@ const posts = [
   {
     "slug": "lassen-volcanic-national-park",
     "title": "Lassen Volcanic: Emerald Lake, Lake Helen, and the Hydrothermal Basins",
-    "excerpt": "An overlooked National Park where a shield volcano, a plug dome, a strato, and a cinder cone sit in the same skyline \u2014 and where spring sun on alpine meltwater turns Emerald Lake unreal.",
+    "excerpt": "An overlooked National Park where a shield volcano, a plug dome, a strato, and a cinder cone sit in the same skyline and where spring sun on alpine meltwater turns Emerald Lake unreal.",
     "category": "Destination",
     "tags": [
       "Hiking",
@@ -85,7 +111,7 @@ const posts = [
     ],
     "author": "freedomland",
     "date": "2026-04-10",
-    "image": "/assets/images/travel/emerald-lake.jpg",
+    "image": "/assets/images/posts/lassen-volcanic.jpg",
     "imageAlt": "Emerald Lake at Lassen Volcanic, ringed by snowmelt and pine.",
     "url": "/journal/lassen-volcanic-national-park",
     "readMinutes": 10

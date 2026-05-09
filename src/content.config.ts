@@ -10,7 +10,7 @@ const journal = defineCollection({
     category: z.string(),
     tags: z.array(z.string()),
     author: z.string(),
-    date: z.string().date(),
+    date: z.coerce.date(),
     image: z.string(),
     imageAlt: z.string(),
     readMinutes: z.number(),

@@ -161,8 +161,8 @@
         {
           "title": "Publishing date",
           "name": "date",
-          "type": "datetime",
-          "default": "{{now}}",
+          "type": "string",
+          "default": "{{now | date: 'YYYY-MM-DD'}}",
           "isPublishDate": true,
           "description": "Publication date (YYYY-MM-DD format)"
         },
