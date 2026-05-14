@@ -1,5 +1,5 @@
 ---
-title: "Umpqua Hot Springs: Oregon's Steamy Paradise Awaits Your Soak"
+title: "Umpqua Hot Springs: Oregon's Steamy Paradise"
 author: freedomland
 date: 2026-13-05
 fmContentType: Journal Entry
