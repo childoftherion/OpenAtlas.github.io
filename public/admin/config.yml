@@ -13,6 +13,16 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "featured_image", widget: "image", media_folder: "posts", public_folder: "/assets/images/posts", required: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "pages" # Used in the URL, e.g., /admin/collections/pages
+    label: "Pages" # Used in the UI
+    folder: "src/pages/pages" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., '{{slug}}'
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "featured_image", widget: "image", media_folder: "pages", public_folder: "/assets/images/pages", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
 
