@@ -1,6 +1,7 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
   const posts = await getCollection("journal");
@@ -10,8 +11,32 @@ export async function getStaticPaths() {
   }));
 }
 
-const { post } = Astro.props;
+interface Props {
+  post: CollectionEntry<'journal'>;
+}
+
+const { post } = Astro.props as Props;
+const data = post.data as typeof post.data & { image_width?: number; image_height?: number; image: string; imageAlt: string; };
 const { Content } = await render(post);
+
+// Helper to construct Netlify Image CDN URL
+const getNetlifyImageUrl = (imagePath: string, width: number, height?: number) => {
+  const params = new URLSearchParams();
+  params.set('url', imagePath);
+  params.set('w', String(width));
+  if (height) {
+    params.set('h', String(height));
+  }
+  params.set('format', 'auto');
+  return `/.netlify/images?${params.toString()}`;
+};
+
+// Helper to generate srcset for Netlify Image CDN
+const getSrcset = (imagePath: string, baseWidth: number, height?: number) => {
+  const widths = [Math.floor(baseWidth * 0.5), baseWidth, Math.floor(baseWidth * 1.5), baseWidth * 2]; // Example widths
+  return widths.map(w => `${getNetlifyImageUrl(imagePath, w, height)} ${w}w`).join(', ');
+};
+
 
 // Get other posts for "more posts" section
 const allPosts = await getCollection("journal");
@@ -20,8 +45,7 @@ const otherPosts = allPosts
   .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
   .slice(0, 3);
 
-const formatDate = (dateStr: string) => {
-  const date = new Date(dateStr);
+const formatDate = (date: Date) => {
   return date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -61,7 +85,15 @@ const formatDate = (dateStr: string) => {
       <p class="lead">{post.data.excerpt}</p>
 
       <div class="article-hero">
-        <img src={post.data.image} alt={post.data.imageAlt} />
+        <Image
+            src={getNetlifyImageUrl(data.image, data.image_width ?? 800, data.image_height ?? 600)}
+            alt={data.imageAlt}
+            width={data.image_width ?? 800}
+            height={data.image_height ?? 600}
+            loading="lazy"
+            srcset={getSrcset(data.image, data.image_width ?? 800, data.image_height ?? 600)}
+            sizes="(max-width: 768px) 100vw, 800px"
+          />
       </div>
     </header>
 
@@ -79,7 +111,15 @@ const formatDate = (dateStr: string) => {
             {otherPosts.map((other) => (
               <a href={`/journal/${other.data.slug}`} class="card">
                 <div class="card__media">
-                  <img src={other.data.image} alt={other.data.imageAlt} />
+                  <Image
+                    src={getNetlifyImageUrl(other.data.image, (other.data as typeof other.data & { image_width?: number; image_height?: number; }).image_width ?? 400, (other.data as typeof other.data & { image_height?: number; }).image_height ?? 300)}
+                    alt={other.data.imageAlt}
+                    width={(other.data as typeof other.data & { image_width?: number; image_height?: number; }).image_width ?? 400}
+                    height={(other.data as typeof other.data & { image_height?: number; }).image_height ?? 300}
+                    loading="lazy"
+                    srcset={getSrcset(other.data.image, (other.data as typeof other.data & { image_width?: number; image_height?: number; }).image_width ?? 400, (other.data as typeof other.data & { image_height?: number; }).image_height ?? 300)}
+                    sizes="(max-width: 768px) 50vw, 400px"
+                  />
                 </div>
                 <div class="card__content">
                   <span class="card__eyebrow">{other.data.category}</span>

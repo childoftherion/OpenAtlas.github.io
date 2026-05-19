@@ -50,6 +50,8 @@ export interface Post {
   date: string;
   image: string;
   imageAlt: string;
+  image_width?: number;
+  image_height?: number;
   url: string;
   readMinutes: number;
 }

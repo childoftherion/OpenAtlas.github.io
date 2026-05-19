@@ -14,6 +14,8 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "featured_image", widget: "image", media_folder: "posts", public_folder: "/assets/images/posts", required: false}
+      - {label: "Image Width", name: "image_width", widget: "number", required: false}
+      - {label: "Image Height", name: "image_height", widget: "number", required: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "pages" # Used in the URL, e.g., /admin/collections/pages
@@ -24,5 +26,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "featured_image", widget: "image", media_folder: "pages", public_folder: "/assets/images/pages", required: false}
+      - {label: "Image Width", name: "image_width", widget: "number", required: false}
+      - {label: "Image Height", name: "image_height", widget: "number", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
 
