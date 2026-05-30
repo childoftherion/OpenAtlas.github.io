@@ -1,9 +1,7 @@
-backend:
-  name: git-gateway
-  branch: main # Branch to update (optional, defaults to master)
+
 
 media_folder: "public/assets/images" # Folder where user uploaded files will be stored
-public_folder: "/assets/images" # The same path without a leading slash. This is where the images are served from.
+public_folder: "/Freedom.OpenAtlas.github.io/assets/images" # The same path without a leading slash. This is where the images are served from.
 
 collections:
   - name: "journal" # Used in the URL, e.g., /admin/collections/journal
@@ -13,7 +11,7 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Featured Image", name: "featured_image", widget: "image", media_folder: "posts", public_folder: "/assets/images/posts", required: false}
+      - {label: "Featured Image", name: "featured_image", widget: "image", media_folder: "posts", public_folder: "/Freedom.OpenAtlas.github.io/assets/images/posts", required: false}
       - {label: "Image Width", name: "image_width", widget: "number", required: false}
       - {label: "Image Height", name: "image_height", widget: "number", required: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -25,7 +23,7 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., '{{slug}}'
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Featured Image", name: "featured_image", widget: "image", media_folder: "pages", public_folder: "/assets/images/pages", required: false}
+      - {label: "Featured Image", name: "featured_image", widget: "image", media_folder: "pages", public_folder: "/Freedom.OpenAtlas.github.io/assets/images/pages", required: false}
       - {label: "Image Width", name: "image_width", widget: "number", required: false}
       - {label: "Image Height", name: "image_height", widget: "number", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
