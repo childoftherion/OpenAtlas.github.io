@@ -4,7 +4,7 @@ Rebuild of [openatlas.wiki](https://openatlas.wiki/).
 Built as an Astro site with route files in `src/pages/pages/` and static assets in `public/`.
 There is no React/Vue/Svelte UI framework — pages are authored as HTML-first Astro route files plus browser ES modules.
 
-**Data source of truth:** All site content data lives in `src/data/*.ts` (TypeScript). Browser-compatible JavaScript files in `public/data/` are auto-generated during build — never edit those directly.
+**Data source of truth:** All site content data lives in `src/data/*.ts` (TypeScript). For journal entries, metadata is auto-generated into `src/data/posts.ts` from Markdown files in `src/content/journal/`. Browser-compatible JavaScript files in `public/data/` are auto-generated during build — never edit those directly.
 
 ## Run locally
 
@@ -49,9 +49,12 @@ npm run preview
 │       │   └── meta/                favicon + social-card assets
 │       └── icons/                   reserved for shared inline SVGs
 └── src/
-    ├── data/                        SOURCE OF TRUTH for all site content
+    ├── content/                     Astro content collections
+    │   └── journal/                 journal entries (Markdown files)
+    │       └── config.ts            schema for journal entries
+    ├── data/                        SOURCE OF TRUTH for all site content (except journal entries)
     │   ├── site.ts                  brand, nav, footer, pillars, stats
-    │   ├── posts.ts                 journal entries
+    │   ├── posts.ts                 aggregated journal entry metadata (auto-generated)
     │   ├── destinations.ts          PNW directory
     │   ├── gear.ts                  gear catalog
     │   ├── library.ts               library catalog
@@ -82,33 +85,7 @@ Edit `src/data/site.ts`.
 
 ### Add a journal entry
 
-1. Copy an existing route under `src/pages/journal/` (e.g.
-   `src/pages/journal/yeti-rambler-26oz-review.astro`).
-2. Create your new route as `src/pages/journal/new-trip.astro`.
-3. Update the `<title>`, meta description, breadcrumbs, and body content.
-4. Set `data-slug="new-trip"` on `<body>` (drives the "more posts" list).
-5. Open `src/data/posts.ts` and prepend a new entry:
-
-   ```ts
-   {
-     slug: "new-trip",
-     title: "Your title",
-     excerpt: "…",
-     category: "Destination",
-     tags: ["Hiking", "Volcano"],
-     author: "freedomland",
-     date: "2026-05-01",
-     readMinutes: 7,
-     image: "/assets/images/posts/new-trip-hero.jpg",
-     imageAlt: "Describe the image.",
-     url: "/journal/new-trip",
-   }
-   ```
-
-6. Drop the cover image into `public/assets/images/posts/`.
-
-That's it — the entry now shows up on the home page, on `/pages/pages/explore/`,
-and in the "more posts" row of every existing journal entry.
+Journal entries are managed using the Front Matter VS Code extension. Please refer to the [Front Matter Publishing Guide](file:///Users/chad/Desktop/Projects/OpenAtlas.github.io/Front%20Matter%20Publishing%20Guide.md) for detailed instructions.
 
 ### Add a PNW destination
 

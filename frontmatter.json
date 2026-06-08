@@ -180,6 +180,18 @@
           "description": "Accessibility description for the hero image"
         },
         {
+          "title": "Image Width",
+          "name": "image_width",
+          "type": "number",
+          "description": "Optional: Width of the image for optimization (e.g., 800)"
+        },
+        {
+          "title": "Image Height",
+          "name": "image_height",
+          "type": "number",
+          "description": "Optional: Height of the image for optimization (e.g., 600)"
+        },
+        {
           "title": "Read Time (minutes)",
           "name": "readMinutes",
           "type": "number",

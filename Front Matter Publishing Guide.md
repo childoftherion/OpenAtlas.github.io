@@ -44,14 +44,16 @@ Complete all required fields in the Front Matter panel:
   - `Destination` - Trip reports and location guides
   - `Field Notes` - Observations and experiences  
   - `Gear Review` - Equipment reviews and tests
-- **Tags**: Keywords separated by commas (e.g., `hiking, oregon, summer`)
-- **Date**: Publication date (defaults to today)
-- **Hero Image**: Main article image
-- **Image Alt Text**: Description for accessibility
-- **Read Time**: Estimated reading time in minutes
 
 #### Optional Fields
+- **Tags**: Keywords separated by commas (e.g., `hiking, oregon, summer`)
 - **Author**: Defaults to "freedomland" (change if needed)
+- **Date**: Publication date (defaults to today, YYYY-MM-DD format)
+- **Image**: Main article image (path: `/assets/images/...`)
+- **Image Alt Text**: Description for accessibility
+- **Image Width**: Optional width of the image for optimization (e.g., `800`)
+- **Image Height**: Optional height of the image for optimization (e.g., `600`)
+- **Read Time (minutes)**: Estimated reading time in minutes
 
 #### ⚠️ Important: Field Validation
 **Only use the fields listed above.** Adding extra fields will cause build errors because your site has a strict content schema. Do NOT add fields like:
@@ -158,6 +160,8 @@ author: freedomland
 date: "2026-04-16"
 image: /assets/images/my-photo.jpg
 imageAlt: Description of the image
+image_width: 800
+image_height: 600
 readMinutes: 5
 ---
 ```
@@ -224,6 +228,8 @@ readMinutes: 5
 Your site supports these additional fields if needed:
 - `author`: Override default "freedomland"
 - `readMinutes`: Manually set reading time
+- `image_width`: Manually set image width for optimization
+- `image_height`: Manually set image height for optimization
 
 ### Content Validation
 Your site automatically validates:
